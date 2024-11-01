@@ -3,20 +3,19 @@ class Solution {
         
         int sum, digit;
         
-        while (n != 1 && n != 4) { // 4 is part of the cycle of unhappy numbers
+        while (n != 1 && n != 4) { 
             sum = 0;
             
-            // Calculate the sum of squares of digits
             while (n > 0) {
                 digit = n % 10;
                 sum += digit * digit;
                 n = n / 10;
             }
             
-            n = sum; // Update n to the calculated sum
+            n = sum; 
         }
 
-        return n == 1; // Return true if it's a happy number
+        return n == 1; 
     }
 }
 
