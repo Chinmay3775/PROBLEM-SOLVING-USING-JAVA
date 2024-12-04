@@ -1,0 +1,16 @@
+class Solution {
+    public boolean canMakeSubsequence(String str1, String str2) {
+        if (str2.length() > str1.length()) {
+            return false;
+        }
+        int j = 0; 
+        for (int i = 0; i < str1.length() && j < str2.length(); i++) {
+            char c1 = str1.charAt(i);
+            char c2 = str2.charAt(j);
+            if (c1 == c2 || (c1 + 1 - 'a') % 26 == c2 - 'a') {
+                j++;
+            }
+        }
+        return j == str2.length();
+    }
+}
