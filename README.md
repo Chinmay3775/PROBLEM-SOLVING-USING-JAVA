@@ -1,2 +1,2 @@
 # Problem-solving-using-JAVA
-Java
+Leetcode Solving using Java
