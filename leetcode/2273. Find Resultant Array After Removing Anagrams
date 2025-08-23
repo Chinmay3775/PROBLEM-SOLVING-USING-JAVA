@@ -1,0 +1,26 @@
+
+class Solution {
+    public List<String> removeAnagrams(String[] words) {
+        List<String> list = new ArrayList<>(Arrays.asList(words)); 
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            String w1 = list.get(i);
+            String w2 = list.get(i + 1);
+
+            if (isAnagram(w1, w2)) {
+                list.remove(i + 1);
+                i--; // adjust index after removal
+            }
+        }
+        return list;
+    }
+
+    static boolean isAnagram(String s1, String s2) {
+        if (s1.length() != s2.length()) return false;
+        char[] a = s1.toCharArray();
+        char[] b = s2.toCharArray();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        return Arrays.equals(a, b);
+    }
+}
